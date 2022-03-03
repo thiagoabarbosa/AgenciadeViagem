@@ -16,3 +16,13 @@ WHEN o usuário confirma sua intenção de reservar o quarto naquele horário
 THEN a reserva é realizada com sucesso
 AND a mensagem "Reserva realizada com sucesso!" aparece na tela
 AND o usuário é redirecionado para a página "reservas"
+
+Scenario: Usuário tenta reservar um quarto num horário indisponível
+GIVEN o usuário já realizou login
+AND já selecionou uma cidade
+AND já selecionou um hotel
+AND está na área "Quartos"
+AND ele seleciona um quarto
+WHEN ele seleciona um horário no qual o quarto está indisponível
+THEN é exibida a mensagem "Esse horário está indisponível."
+AND o usuário volta para a área "Quartos"
