@@ -36,3 +36,12 @@ AND ele seleciona um quarto
 WHEN ele seleciona um horário no qual o quarto está disponível
 THEN é exibida a mensagem "É necessário estar cadastrado para fazer uma reserva."
 AND o usuário é direcionado para a área "Login"
+
+Scenario: Usuário tenta reservar um quarto no qual não há horários disponíveis
+GIVEN o usuário já realizou login
+AND já selecionou uma cidade
+AND já selecionou um hotel
+AND está na área "Quartos"
+WHEN ele seleciona um quarto sem horários disponíveis
+THEN é exibida a mensagem "Esse quarto não tem horários disponíveis."
+AND o usuário volta para a área "Quartos"
